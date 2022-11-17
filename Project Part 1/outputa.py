@@ -45,7 +45,6 @@ for line in manu_list:
     # adding data's value into a dictionary
     dataDictionary.update({data.ID: data})
 
-
 for line in price_list:
     dataList = line.replace('\n', '').split(',')
     ID = 0
@@ -82,3 +81,5 @@ wf = csv.writer(write_handle)
 
 for key in dataDictionary.keys():
     wf.writerow(dataDictionary[key].tostring())
+
+write_handle.close()
