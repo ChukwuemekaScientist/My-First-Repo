@@ -2,7 +2,10 @@
 # 1871765
 
 num_calls = 0
+
+
 def partition(numbers, i, k):
+    global num_calls
     midpoint = i + (k - i) // 2
     pivot = numbers[midpoint]
 
@@ -22,10 +25,12 @@ def partition(numbers, i, k):
             numbers[h] = temp
             l = l + 1
             h = h - 1
+    num_calls += 1
     return h
 
 
-def quicksort(numbers, i, k, num_calls=0):
+def quicksort(numbers, i, k):
+    global num_calls
 
     j = 0
     if i >= k:
@@ -33,11 +38,9 @@ def quicksort(numbers, i, k, num_calls=0):
 
     j = partition(numbers, i, k)
 
-    quicksort(numbers, i, j, )
-    num_calls += 1
+    quicksort(numbers, i, j)
     quicksort(numbers, j + 1, k)
-    num_calls += 1
-    return num_calls
+    return num_calls+1
 
 
 if __name__ == "__main__":
@@ -56,5 +59,3 @@ if __name__ == "__main__":
     # Print sorted user ids
     for user_id in user_ids:
         print(user_id)
-
-
