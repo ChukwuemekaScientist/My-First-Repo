@@ -2,3 +2,4 @@ This is the folder for Homework 1. It includes labs 12.7, 12.9, 14.11, and 14.13
 12.7 is about using exceptions to handle invalid integers
 12.9 is about using exceptions to detect strings vs integers
 14.11 is about using selection sort to sort a list in ascending order
+14.13 is about using partition and quick sort
